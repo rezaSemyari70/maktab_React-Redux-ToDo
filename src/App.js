@@ -20,7 +20,7 @@ function App() {
                             <AddTodoForm/>
                         </Route>
                         <Route exact path='/update/:id'>
-                            
+                            <AddTodoForm/>
                         </Route>
                         <Route exact path='/todo/:id'></Route>
                     </Switch>

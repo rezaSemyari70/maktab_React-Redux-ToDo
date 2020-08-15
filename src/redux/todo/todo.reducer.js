@@ -36,11 +36,17 @@ const initial_state = {
     ]
 }
 const todoReducer = (state = initial_state, action) => {
-    switch (action.type) {
+    const {type , payload} = action;
+    switch (type) {
         case types.ADD_TO_DO :
             return {
                 ...state , 
-                todoList : [...state.todoList , action.payload]
+                todoList : [...state.todoList , payload]
+            }
+        case types.EDIT_TO_DO :
+            return {
+                ...state , 
+                todoList : state.todoList.map(item => item.id == payload.id ? payload : item)
             }
 
         default:

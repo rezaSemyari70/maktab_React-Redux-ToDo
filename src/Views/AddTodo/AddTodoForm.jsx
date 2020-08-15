@@ -1,26 +1,32 @@
 import React, {useState} from 'react'
 import { Form, FormGroup, Label, Input, Card, CardTitle, CardBody, Row, Col, Container, Button} from 'reactstrap'
 import {useHistory} from 'react-router-dom';
-import {addTodo} from '../../redux/todo/todo.actions';
+import {addTodo , editTodo} from '../../redux/todo/todo.actions';
 import {connect} from 'react-redux';
 import {todoId} from '../../redux/todo/todo.selectors';
 import {createStructuredSelector} from 'reselect';
 // import {useSelector} from 'react-redux';
+import {useParams} from 'react-router-dom';
+import {useSelector} from "react-redux";
 
-function AddTodoForm({addTodo, todoId}) {
-    let history = useHistory();
+
+function AddTodoForm({ addTodo, todoId , editTodo}) {
+
     // const todoId2 = useSelector(state => state.todo.todoList.length + 1)
-
-    const [todo,
-        setTodo] = useState({subject: '', describe: ''})
-    const [checkItems,
-        setCheckItems] = useState([
-        {
+    let history = useHistory();
+    let {id} = useParams();
+    const tempraryTodo = useSelector(state => state.todo.todoList.find(item => item.id == id ))
+    const [todo , setTodo] = useState(tempraryTodo ? 
+          {subject: tempraryTodo.subject , describe: tempraryTodo.describe} 
+        : {subject: '', describe: ''})
+        
+    const [checkItems , setCheckItems] = useState( tempraryTodo ? tempraryTodo.checkList :
+        [{
             id: 1,
             text: '',
             status: false
-        }
-    ])
+        }]
+   )
 
     const addCheckItem = () => {
         setCheckItems([
@@ -51,7 +57,14 @@ function AddTodoForm({addTodo, todoId}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        addTodo({
+        
+        tempraryTodo && editTodo({
+            id: tempraryTodo.id,
+            ...todo,
+            checkList: checkItems
+        }) 
+
+        !tempraryTodo && addTodo({
             id: todoId,
             ...todo,
             checkList: checkItems
@@ -107,4 +120,4 @@ function AddTodoForm({addTodo, todoId}) {
 
 const mapStateToProps = createStructuredSelector({todoId})
 
-export default connect(mapStateToProps, {addTodo})(AddTodoForm)
+export default connect(mapStateToProps, {addTodo , editTodo})(AddTodoForm)
