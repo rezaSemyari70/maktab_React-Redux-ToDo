@@ -20,3 +20,10 @@ export const deleteTodo = (todo) => {
         payload : todo 
     }
 }
+
+export const toggleStatusCheckItem = (todoId , itemId) => {
+    return {
+        type : types.TOGGLE_STATUS_CHECKITEM_TO_DO,
+        payload : {todoId , itemId} 
+    }
+}

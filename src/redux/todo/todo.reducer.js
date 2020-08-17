@@ -53,6 +53,16 @@ const todoReducer = (state = initial_state, action) => {
                 ...state , 
                     todoList : state.todoList.filter(item => item.id !== payload)
             }
+        case types.TOGGLE_STATUS_CHECKITEM_TO_DO :
+            return {
+                ...state , 
+                    todoList : state.todoList.map(todo => todo.id == payload.todoId ? 
+                        {
+                            ...todo , checkList : todo.checkList.map(checkItem => checkItem.id == payload.itemId ? 
+                                {...checkItem , status: !checkItem.status} : checkItem)
+                        }    
+                    : todo )
+            }
 
         default:
             return state;

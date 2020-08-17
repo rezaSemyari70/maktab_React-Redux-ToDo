@@ -1,9 +1,9 @@
 import React from 'react'
 import {Row, Col, Button} from 'reactstrap';
-import { Link } from 'react-router-dom';
-import {deleteTodo} from '../../redux/todo/todo.actions'
+import {Link} from 'react-router-dom';
+import {deleteTodo, toggleStatusCheckItem} from '../../redux/todo/todo.actions'
 import {connect} from 'react-redux';
-function TodoCard({todo , deleteTodo}) {
+function TodoCard({todo, deleteTodo, toggleStatusCheckItem}) {
 
     return (
         <Row>
@@ -11,22 +11,26 @@ function TodoCard({todo , deleteTodo}) {
                 <p>{todo.subject}</p>
                 <p>{todo.describe}</p>
                 <Link to={`/update/${todo.id}`}>Edit</Link>
-                <Button onClick={()=>deleteTodo(todo.id)}>Delete</Button>
+                <Button onClick={() => deleteTodo(todo.id)}>Delete</Button>
                 <ul>
-                    {todo.checkList.map(checkItem => 
+                    {todo.checkList.map(checkItem =>
 
-                        <li key={`${todo.id}${checkItem.id}`}>
-                            {checkItem.status 
-                                ? <del>{checkItem.text}</del > 
-                                : checkItem.text                      
-                            }     
-                        </li>
-  
-                    )}
+                        <span 
+                            onClick={() => toggleStatusCheckItem(todo.id, checkItem.id)}
+                            key={`${todo.id}${checkItem.id}`}
+                        >
+                            <li >
+
+                                {checkItem.status
+                                    ? <del>{checkItem.text}</del >
+                                    : checkItem.text}
+
+                            </li>
+                        </span>)}
                 </ul>
             </Col>
         </Row>
     )
 }
 
-export default connect(null , {deleteTodo})(TodoCard);
+export default connect(null, {deleteTodo, toggleStatusCheckItem})(TodoCard);
