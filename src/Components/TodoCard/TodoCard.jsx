@@ -1,8 +1,9 @@
 import React from 'react'
-import {Row, Col} from 'reactstrap';
+import {Row, Col, Button} from 'reactstrap';
 import { Link } from 'react-router-dom';
-
-function TodoCard({todo}) {
+import {deleteTodo} from '../../redux/todo/todo.actions'
+import {connect} from 'react-redux';
+function TodoCard({todo , deleteTodo}) {
 
     return (
         <Row>
@@ -10,6 +11,7 @@ function TodoCard({todo}) {
                 <p>{todo.subject}</p>
                 <p>{todo.describe}</p>
                 <Link to={`/update/${todo.id}`}>Edit</Link>
+                <Button onClick={()=>deleteTodo(todo.id)}>Delete</Button>
                 <ul>
                     {todo.checkList.map(checkItem => 
 
@@ -27,4 +29,4 @@ function TodoCard({todo}) {
     )
 }
 
-export default TodoCard;
+export default connect(null , {deleteTodo})(TodoCard);

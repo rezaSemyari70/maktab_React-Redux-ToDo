@@ -13,3 +13,10 @@ export const editTodo = (todo) => {
         payload : todo 
     }
 }
+
+export const deleteTodo = (todo) => {
+    return {
+        type : types.DELETE_TO_DO,
+        payload : todo 
+    }
+}
