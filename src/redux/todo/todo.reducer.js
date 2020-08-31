@@ -4,8 +4,8 @@ const initial_state = {
     todoList: [
         {
             id: 1,
-            subject: "check list",
-            describe:'Describetion ...',
+            subject: "Subject Todo",
+            describe:'Summary Describetion',
             checkList: [
                 {
                     id: 1,
@@ -19,8 +19,8 @@ const initial_state = {
             ]
         }, {
             id: 2,
-            subject: "another Check list",
-            describe:'Describetion ...',
+            subject: "Subject Todo",
+            describe:'Summary Describetion',
             checkList: [
                 {
                     id: 1,
@@ -29,7 +29,7 @@ const initial_state = {
                 }, {
                     id: 2,
                     text: "second job",
-                    status: true
+                    status: false
                 }
             ]
         }

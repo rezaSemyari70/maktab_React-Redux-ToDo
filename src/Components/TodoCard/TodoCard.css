@@ -1,0 +1,73 @@
+/* .MuiButton-label{
+    padding: 10px;
+    background-color: rgba(173, 173, 173, 0.171);
+    border-radius: 5px;
+    outline: none;
+    
+} */
+.MuiButton-root .MuiButton-label:hover {
+    text-decoration: none !important;
+}
+
+.MuiButton-label p {
+
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* div p {
+    padding-left: 20px;
+} */
+
+ul li {
+    list-style-type: none;
+}
+
+.makeStyles-deleteBtn-5 {
+    text-decoration: none !important;
+}
+
+.MuiButtonBase-root {
+    outline: none !important;
+}
+.MuiButton-label:hover {
+    color: blueviolet;
+    font-weight: bold;
+}
+@media (max-width: 575.98px) {
+    .swal2-actions {
+        flex-direction: column-reverse;
+    }
+}
+
+.swal2-styled.swal2-confirm {
+    background-color: rgb(247, 247, 247);
+    border: none !important;
+    outline: none !important;
+}
+
+.swal2-styled.swal2-confirm {
+    color: rgb(124, 124, 124);
+}
+
+.swal2-styled.swal2-cancel {
+    width: 220px;
+}
+
+
+
+
+.item-enter {
+    opacity: 0;
+}
+.item-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+.item-exit {
+    opacity: 1;
+}
+.item-exit-active {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+}
