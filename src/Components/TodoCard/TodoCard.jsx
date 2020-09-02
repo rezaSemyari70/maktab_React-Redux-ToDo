@@ -13,6 +13,10 @@ import {Link} from 'react-router-dom';
 // import Link from '@material-ui/core/Link';
 import Swal from 'sweetalert2'
 import AssignmentIcon from '@material-ui/icons/Assignment';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 // import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import './TodoCard.css';
 import ContentTodo from '../ContentTodo/ContentTodo';
@@ -42,12 +46,14 @@ const useStyles = makeStyles((theme) => ({
             fontWeight: 'bold'
         }
     },
-    // inputCheck:{     marginRight:10, }, checkItem:{     cursor:'pointer', },
-    // describeTitle:{     paddingLeft:20, },
     iconTodo: {
-        color: '#929292',
+        color: '#6c5f5d',
         marginRight: 10
+    },
+    titleTodo:{
+        
     }
+
 
 }));
 
@@ -109,29 +115,39 @@ function TodoCard({todo, deleteTodo, toggleStatusCheckItem}) {
 
     return (
         <Row>
-            <Col>
+            <Col className="mx-3">
                 <div>
 
-                    <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                    <Button  aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
                         <AssignmentIcon className={classes.iconTodo}/>
-                        <p>{todo.subject}</p>
+                        <p className="text-nowrap">{todo.subject}</p>
+                        <ListItemIcon>
+                                <ExpandMoreIcon fontSize="small"/>
+                            </ListItemIcon>
                     </Button>
-                        <Menu
-                            id="simple-menu"
-                            anchorEl={anchorEl}
-                            keepMounted
-                            open={Boolean(anchorEl)}
-                            onClose={handleClose}>
-                            <MenuItem >
-                                <Link to={`/update/${todo.id}`} className={classes.editBtn}>Edit</Link>
-                            </MenuItem>
-                            {/* <Link> */}
-                            <MenuItem onClick={handleDelete} className={classes.deleteBtn}>Delete</MenuItem>
-                            {/* </Link> */}
-                        </Menu>
+                    <Menu
+                        id="simple-menu"
+                        anchorEl={anchorEl}
+                        keepMounted
+                        open={Boolean(anchorEl)}
+                        onClose={handleClose}>
+                        <MenuItem >
+                            <Link to={`/update/${todo.id}`} className={classes.editBtn}>
+                            <ListItemIcon>
+                                <EditIcon fontSize="small"/>
+                            </ListItemIcon>Edit
+                            </Link>
+                        </MenuItem>
+                        {/* <Link> */}
+                        <MenuItem onClick={handleDelete} className={classes.deleteBtn}>
+                        <ListItemIcon>
+                                <DeleteIcon fontSize="small"/>
+                            </ListItemIcon>Delete
+                        </MenuItem>
+                        {/* </Link> */}
+                    </Menu>
                 </div>
-                <ContentTodo todo={todo} toggleStatusCheckItem={toggleStatusCheckItem}/> 
-                {/* <p>{todo.subject}</p> */}
+                <ContentTodo todo={todo} toggleStatusCheckItem={toggleStatusCheckItem}/> {/* <p>{todo.subject}</p> */}
                 {/* <p className={classes.describeTitle}>{todo.describe}</p>
 
                 <ul>

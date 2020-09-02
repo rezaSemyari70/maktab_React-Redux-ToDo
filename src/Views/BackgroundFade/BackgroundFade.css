@@ -1,15 +1,19 @@
 .App {
     font-family: sans-serif;
     text-align: center;
-  }
-  
-  .bg {
+}
+
+.bg {
     position: absolute;
     top: 0;
     left: 0;
+    bottom: 0;
     width: 100vw;
     height: 100vh;
-    background-size: cover;
+    background-size: cover !important;
     background-position: center;
     will-change: opacity;
-  }
+    background-repeat: no-repeat !important;
+    overflow-x: hidden !important;
+    background: linear-gradient(to left, #ecececdc , #979797c4);
+}

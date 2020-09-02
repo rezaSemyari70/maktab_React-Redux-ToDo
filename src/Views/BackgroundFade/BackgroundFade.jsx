@@ -8,7 +8,7 @@ const slides = [
   { id: 1, url: 'mountains.jpg?auto=compress&w=900&h=600&fit=crop&crop=focalpoint&fp-x=.41&fp-y=.43&fp-z=1.59' },
   { id: 2, url: 'alarmclock.jpg?auto=compress&w=900&h=600&fit=crop&crop=focalpoint&fp-x=.41&fp-y=.43&fp-z=1.59' },
   { id: 3, url: 'bridge.jpg?auto=compress&w=900&h=600&fit=crop&crop=focalpoint&fp-x=.41&fp-y=.43&fp-z=1.59' },
-  { id: 4, url: 'motorbike.jpg?auto=compress&w=900&h=600&fit=crop&crop=focalpoint&fp-x=.41&fp-y=.43&fp-z=1.59' },
+  { id: 4, url: 'transport.jpg?auto=compress&w=900&h=600&fit=crop' },
 ]
 
 const BackgroundFade = () => {
@@ -19,13 +19,14 @@ const BackgroundFade = () => {
     leave: { opacity: 0 },
     config: config.molasses,
   })
-  useEffect(() => void setInterval(() => set(state => (state + 1) % 4), 2000), [])
+  useEffect(() => void setInterval(() => set(state => (state + 1) % 5), 3000), [])
   return transitions.map(({ item, props, key }) => (
-    <animated.div
-      key={key}
+    <div key={item.id}>
+      <animated.div
       className="bg"
       style={{ ...props, backgroundImage: `url(https://assets.imgix.net/unsplash/${item.url}&auto=format&fit=crop)` }}
     />
+    </div>
   ))
 }
 

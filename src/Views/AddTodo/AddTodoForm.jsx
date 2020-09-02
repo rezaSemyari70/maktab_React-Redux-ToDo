@@ -1,15 +1,11 @@
 import React, {useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import {
-    Form, FormGroup
-    // Row, Col, Container
-} from 'reactstrap'
+import {Form, FormGroup} from 'reactstrap'
 import {useHistory} from 'react-router-dom';
 import {addTodo, editTodo} from '../../redux/todo/todo.actions';
 import {connect} from 'react-redux';
 import {todoId} from '../../redux/todo/todo.selectors';
 import {createStructuredSelector} from 'reselect';
-// import {useSelector} from 'react-redux';
 import {useParams} from 'react-router-dom';
 import {useSelector} from "react-redux";
 import Card from '@material-ui/core/Card';
@@ -18,11 +14,15 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
-  
+import {theme} from '../../theme';
+import { ThemeProvider } from '@material-ui/core';
+
   const useStyles = makeStyles((theme) => ({
     root: {
         minWidth: 275,
-        marginTop: '50px'
+        marginTop: '50px',
+        marginLeft:20,
+        marginRight:20,
 
     },
     bullet: {
@@ -32,7 +32,9 @@ import TextField from '@material-ui/core/TextField';
     },
     title: {
         fontSize: 20,
-        marginBottom: '50px'
+        marginBottom: '50px',
+        // border:'none',
+        marginRight: '50px'
     },
     pos: {
         marginBottom: 12
@@ -41,13 +43,16 @@ import TextField from '@material-ui/core/TextField';
       margin: theme.spacing(1),
     },
     addCheckItemBtn:{
-        backgroundColor: '#f54189',
+        backgroundColor: '#aa5091',
         '&:hover':{
             color: '#fff',
+            backgroundColor:'#df6bbf',
             fontWeight : 'bold'
         }
     },
     saveBtn:{
+        height:40 ,
+        marginRight:10,
         backgroundColor: '#2db378',
         '&:hover':{
             backgroundColor: '#17744b',
@@ -137,7 +142,7 @@ function AddTodoForm({addTodo, todoId, editTodo}) {
     }
 
     return (
-
+<ThemeProvider theme={theme}>
         <Card className={classes.root}>
             <CardContent>
                 <Typography className={classes.title} color="textSecondary" gutterBottom>
@@ -153,7 +158,9 @@ function AddTodoForm({addTodo, todoId, editTodo}) {
                             id="title"
                             fullWidth
                             label="subject Todo"
-                            variant="outlined"/>
+                            variant="outlined"
+                            required
+                            />
 
                     </FormGroup>
                     <FormGroup>
@@ -164,7 +171,9 @@ function AddTodoForm({addTodo, todoId, editTodo}) {
                             id="describe"
                             fullWidth
                             label="Describetion Todo"
-                            variant="outlined"/>
+                            variant="outlined"
+                            required
+                            />
                     </FormGroup>
                     {checkItems.map(checkItem => <FormGroup key={checkItem.id}>
                         <TextField
@@ -175,7 +184,10 @@ function AddTodoForm({addTodo, todoId, editTodo}) {
                             id="title"
                             fullWidth
                             label="Check Todo"
-                            variant="outlined"/>
+                            variant="outlined"
+                            required
+                            defaultValue="Success"
+                            />
                     </FormGroup>)}
                     <CardActions>
                         <Button type="button" variant="contained" color="secondary" className={classes.addCheckItemBtn} onClick={addCheckItem}>Add checkItem</Button>{'  '}
@@ -184,6 +196,7 @@ function AddTodoForm({addTodo, todoId, editTodo}) {
                 </Form>
             </CardContent>
         </Card>
+        </ThemeProvider>
     )
 }
 

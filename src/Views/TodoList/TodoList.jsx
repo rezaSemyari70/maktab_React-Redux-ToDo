@@ -1,65 +1,89 @@
 import React from 'react'
-import { Container, Card, CardHeader, CardBody } from 'reactstrap'
+import {Container} from 'reactstrap'
 import TodoCard from '../../Components/TodoCard/TodoCard'
 import {connect} from 'react-redux';
-import { Link } from 'react-router-dom';
-
-
-// import PropTypes from 'prop-types';
-// import { withStyles } from '@material-ui/core/styles';
+import {Link} from 'react-router-dom';
+import {theme} from '../../theme';
+import {ThemeProvider} from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
-
-// import './TodoList.css';
+import {makeStyles , withStyles} from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      '& > *': {
-        margin: theme.spacing(1),
-        marginTop: '50px'
-      },
+        '& > *': {
+            margin: theme.spacing(1),
+            marginTop: '50px',
+        }
     },
-    addBtn : {
-        backgroundColor: '#0b9b67',
-        color: 'white',
+    media: {
+        height: 240,
+        marginRight: 15,
+        marginLeft: 0,
+        borderRadius: '4px '
     },
-    addLink:{
-        '&:hover':{
-            textDecoration:'none',
+    addBtn: {
+        height: 35,
+        backgroundColor: '#284e43',
+        color: 'white'
+    },
+    addLink: {
+
+        '&:hover': {
+            textDecoration: 'none'
         }
     }
-  }));
+}));
+
+const CustomCard = withStyles({
+    root:{
+      borderRadius:'10px 10px 10px 20px',
+      background:'linear-gradient(to right, #ecececdc , #979797c4)'
+    }
+})(Card)
 
 
-function TodoList({todoList , props}) {
+function TodoList({todoList, props}) {
 
     const classes = useStyles();
-
     return (
-        <Container className={classes.root}>
-                <Card id="card">
-                    <CardHeader>
-                    <Link to='/add' className={classes.addLink}><Button size='large' className={classes.addBtn}><p>Add Todo</p></Button></Link>
-                    </CardHeader>
-                    <CardBody>
-                        {todoList.map(todo => 
-                            <TodoCard key={todo.id} todo={todo}/>
-                        )}
-                    </CardBody>
-                </Card>
-        </Container>
+        <ThemeProvider theme={theme}>
+            <Container className={classes.root}>
+                <CustomCard className={classes.root}>
+                    <CardActionArea>
+                        <CardMedia
+                            className={classes.media}
+                            image= 'https://assets.imgix.net/unsplash/motorbike.jpg?auto=compress&w=900&h=600&fit=crop'
+                           title="Contemplative Reptile"/>
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="h2">
+                                <Link to='/add' className={classes.addLink}>
+                                    <Button size='large' className={classes.addBtn}>
+                                        <p>Add Todo</p>
+                                    </Button>
+                                </Link>
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                {todoList.map(todo => <TodoCard key={todo.id} todo={todo}/>)}
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </CustomCard>
+            </Container>
+        </ThemeProvider>
     )
 }
 
 // UnstyledComponent.propTypes = {
-//     classes: PropTypes.object.isRequired,
-//   };
-
+//   classes: PropTypes.object.isRequired,
+// };
 
 const mapStateToProps = state => {
-    return {
-        todoList : state.todo.todoList
-    }
+    return {todoList: state.todo.todoList}
 }
 
-export default connect (mapStateToProps , {})(TodoList );
+export default connect(mapStateToProps, {})(TodoList);

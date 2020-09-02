@@ -7,6 +7,7 @@ import AddTodoForm from './Views/AddTodo/AddTodoForm';
 import {CSSTransition} from 'react-transition-group'
 import './App.css';
 import BackgroundFade from './Views/BackgroundFade/BackgroundFade';
+// import { Container } from '@material-ui/core';
 
 const routes = [
     {
@@ -32,7 +33,10 @@ function App() {
     return (
         <Provider store={store}>
             <div>
+                <div style={{overflowY:'hidden' , width:'100vw' , height:'100vh' , position:'fixed'}}>
                 <BackgroundFade/>
+            </div>
+                
                 <Router>
                     <div className="container">
                         {routes.map(({path, Component}) => (
@@ -48,6 +52,7 @@ function App() {
                         ))}
                     </div>
                 </Router>
+                
             </div>
         </Provider>
     );
