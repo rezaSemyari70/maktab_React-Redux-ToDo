@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/maktab_React-Redux-ToDo/static/css/main.5026371d.chunk.css",
-    "main.js": "/maktab_React-Redux-ToDo/static/js/main.99b8c731.chunk.js",
-    "main.js.map": "/maktab_React-Redux-ToDo/static/js/main.99b8c731.chunk.js.map",
+    "main.js": "/maktab_React-Redux-ToDo/static/js/main.9c543236.chunk.js",
+    "main.js.map": "/maktab_React-Redux-ToDo/static/js/main.9c543236.chunk.js.map",
     "runtime-main.js": "/maktab_React-Redux-ToDo/static/js/runtime-main.4e1e3d29.js",
     "runtime-main.js.map": "/maktab_React-Redux-ToDo/static/js/runtime-main.4e1e3d29.js.map",
     "static/css/2.11829350.chunk.css": "/maktab_React-Redux-ToDo/static/css/2.11829350.chunk.css",
     "static/js/2.66ab061c.chunk.js": "/maktab_React-Redux-ToDo/static/js/2.66ab061c.chunk.js",
     "static/js/2.66ab061c.chunk.js.map": "/maktab_React-Redux-ToDo/static/js/2.66ab061c.chunk.js.map",
     "index.html": "/maktab_React-Redux-ToDo/index.html",
-    "precache-manifest.0a1715d0c67b944b6bfd4f618d39e73b.js": "/maktab_React-Redux-ToDo/precache-manifest.0a1715d0c67b944b6bfd4f618d39e73b.js",
+    "precache-manifest.569c245a9d5249a385966a86e75a8f94.js": "/maktab_React-Redux-ToDo/precache-manifest.569c245a9d5249a385966a86e75a8f94.js",
     "service-worker.js": "/maktab_React-Redux-ToDo/service-worker.js",
     "static/css/2.11829350.chunk.css.map": "/maktab_React-Redux-ToDo/static/css/2.11829350.chunk.css.map",
     "static/css/main.5026371d.chunk.css.map": "/maktab_React-Redux-ToDo/static/css/main.5026371d.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.11829350.chunk.css",
     "static/js/2.66ab061c.chunk.js",
     "static/css/main.5026371d.chunk.css",
-    "static/js/main.99b8c731.chunk.js"
+    "static/js/main.9c543236.chunk.js"
   ]
 }

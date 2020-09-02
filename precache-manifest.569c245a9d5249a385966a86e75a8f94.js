@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e2e960c2cfa2b71d7b388804a00f59a7",
+    "revision": "8d6dd4279230690b85e27fead322cec1",
     "url": "/maktab_React-Redux-ToDo/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/maktab_React-Redux-ToDo/static/css/2.11829350.chunk.css"
   },
   {
-    "revision": "3e8d3d2900f343f36613",
+    "revision": "16f03b3e1764acadad31",
     "url": "/maktab_React-Redux-ToDo/static/css/main.5026371d.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/maktab_React-Redux-ToDo/static/js/2.66ab061c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3e8d3d2900f343f36613",
-    "url": "/maktab_React-Redux-ToDo/static/js/main.99b8c731.chunk.js"
+    "revision": "16f03b3e1764acadad31",
+    "url": "/maktab_React-Redux-ToDo/static/js/main.9c543236.chunk.js"
   },
   {
     "revision": "e2d47b4c50c5cf0a451a",
