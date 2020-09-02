@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/maktab_React-Redux-ToDo/static/css/main.77f194c8.chunk.css",
-    "main.js": "/maktab_React-Redux-ToDo/static/js/main.3af8efbe.chunk.js",
-    "main.js.map": "/maktab_React-Redux-ToDo/static/js/main.3af8efbe.chunk.js.map",
+    "main.css": "/maktab_React-Redux-ToDo/static/css/main.5026371d.chunk.css",
+    "main.js": "/maktab_React-Redux-ToDo/static/js/main.99b8c731.chunk.js",
+    "main.js.map": "/maktab_React-Redux-ToDo/static/js/main.99b8c731.chunk.js.map",
     "runtime-main.js": "/maktab_React-Redux-ToDo/static/js/runtime-main.4e1e3d29.js",
     "runtime-main.js.map": "/maktab_React-Redux-ToDo/static/js/runtime-main.4e1e3d29.js.map",
     "static/css/2.11829350.chunk.css": "/maktab_React-Redux-ToDo/static/css/2.11829350.chunk.css",
-    "static/js/2.90bc5ece.chunk.js": "/maktab_React-Redux-ToDo/static/js/2.90bc5ece.chunk.js",
-    "static/js/2.90bc5ece.chunk.js.map": "/maktab_React-Redux-ToDo/static/js/2.90bc5ece.chunk.js.map",
+    "static/js/2.66ab061c.chunk.js": "/maktab_React-Redux-ToDo/static/js/2.66ab061c.chunk.js",
+    "static/js/2.66ab061c.chunk.js.map": "/maktab_React-Redux-ToDo/static/js/2.66ab061c.chunk.js.map",
     "index.html": "/maktab_React-Redux-ToDo/index.html",
-    "precache-manifest.f54d3cc49b7a9563318990016f1f26d8.js": "/maktab_React-Redux-ToDo/precache-manifest.f54d3cc49b7a9563318990016f1f26d8.js",
+    "precache-manifest.0a1715d0c67b944b6bfd4f618d39e73b.js": "/maktab_React-Redux-ToDo/precache-manifest.0a1715d0c67b944b6bfd4f618d39e73b.js",
     "service-worker.js": "/maktab_React-Redux-ToDo/service-worker.js",
     "static/css/2.11829350.chunk.css.map": "/maktab_React-Redux-ToDo/static/css/2.11829350.chunk.css.map",
-    "static/css/main.77f194c8.chunk.css.map": "/maktab_React-Redux-ToDo/static/css/main.77f194c8.chunk.css.map",
-    "static/js/2.90bc5ece.chunk.js.LICENSE.txt": "/maktab_React-Redux-ToDo/static/js/2.90bc5ece.chunk.js.LICENSE.txt"
+    "static/css/main.5026371d.chunk.css.map": "/maktab_React-Redux-ToDo/static/css/main.5026371d.chunk.css.map",
+    "static/js/2.66ab061c.chunk.js.LICENSE.txt": "/maktab_React-Redux-ToDo/static/js/2.66ab061c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4e1e3d29.js",
     "static/css/2.11829350.chunk.css",
-    "static/js/2.90bc5ece.chunk.js",
-    "static/css/main.77f194c8.chunk.css",
-    "static/js/main.3af8efbe.chunk.js"
+    "static/js/2.66ab061c.chunk.js",
+    "static/css/main.5026371d.chunk.css",
+    "static/js/main.99b8c731.chunk.js"
   ]
 }
